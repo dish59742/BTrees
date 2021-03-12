@@ -10,6 +10,7 @@ for PYBIN in /opt/python/*/bin; do
        [[ "${PYBIN}" == *"cp37"* ]] || \
        [[ "${PYBIN}" == *"cp38"* ]]; then
         "${PYBIN}/pip" install -e /io/
+	"${PYBIN}/pip" install wheel cffi-dev
         "${PYBIN}/pip" wheel /io/ -w wheelhouse/
 	rm -rf /io/build /io/*.egg-info
     fi
